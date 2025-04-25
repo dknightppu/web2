@@ -4,10 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const artist = document.getElementById('artist').value;
-    const album_title = document.getElementById('album_title').value;
-    const year = document.getElementById('year').value;
-    const genre = document.getElementById('genre').value;
+    const artist = document.getElementById('artist').value.trim();
+    const album_title = document.getElementById('album_title').value.trim();
+    const year = parseInt(document.getElementById('year').value);  // ✅ make it a number
+    const genre = document.getElementById('genre').value.trim();
+
+    if (!artist || !album_title || isNaN(year) || !genre) {
+      alert('Please fill out all fields correctly.');
+      return;
+    }
 
     try {
       const response = await fetch('https://echoa.onrender.com/api/v1/echoa', {
@@ -48,4 +53,3 @@ function showModal() {
     }
   };
 }
-
