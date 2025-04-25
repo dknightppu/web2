@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Classic Album</title>
-    <link href="./stylesheets/classicstheme.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Modify Album</title>
+  <link href="./stylesheets/classicstheme.css" rel="stylesheet" />
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="addClassics.html">Add Classic Album</a>
-            <a href="modifyClassics.html">Change Classic Album</a>
-        </nav>
-    </header>
+<header>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="addClassics.html">Add Album</a>
+    <a href="modifyClassics.html">Modify Album</a>
+  </nav>
+</header>
 
-    <main>
-        <div class="container">
-            <div class="form-container">
-                <h2>Change Classic Album</h2>
-                <form class="form">
-                    <label for="id">ID:</label>
-                    <input type="number" id="id" name="id" placeholder="Enter ID" required>
+<main>
+  <h2>Modify Classic Album</h2>
 
-                    <label for="album">Album:</label>
-                    <input type="text" id="album" name="album" placeholder="Enter Album Name" required>
+  <!-- Dropdown to select album -->
+  <div class="form-container">
+    <label for="albumSelect">Select Album to Edit:</label>
+    <select id="albumSelect">
+      <option value="">-- Select an album --</option>
+    </select>
 
-                    <label for="artist">Artist:</label>
-                    <input type="text" id="artist" name="artist" placeholder="Enter Artist Name" required>
+    <!-- Form to update album -->
+    <form class="form" id="updateForm">
+      <label for="artist">Artist:</label>
+      <input type="text" id="artist" required>
 
-                    <div class="button-container">
-                        <button type="submit" class="submit-btn">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </main>
+      <label for="album_title">Album Title:</label>
+      <input type="text" id="album_title" required>
 
-    <!-- Toast and Post Scripts -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.toaster.js"></script>
-    <script src="./js/postClassics.js" defer></script>
+      <label for="year">Year:</label>
+      <input type="number" id="year" required>
+
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" required>
+
+      <div class="button-container">
+        <button type="submit" class="submit-btn">Update Album</button>
+      </div>
+    </form>
+  </div>
+
+</main>
+
+<script src="./js/putClassics.js" defer></script>
 
 </body>
 </html>
