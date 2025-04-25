@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await response.json();
 
     new gridjs.Grid({
-      columns: ['ID', 'Artist', 'Album Title', 'Year', 'Genre'],
-      data: data.map(item => [item.id, item.artist, item.album_title, item.year, item.genre]),
+      columns: ['Artist', 'Album Title', 'Year', 'Genre'],
+      data: data.map(item => [item.artist, item.album_title, item.year, item.genre]),
       search: true,
       sort: true,
       pagination: {
