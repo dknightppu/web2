@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // GET all albums
-app.get('/api/classics', async (req, res) => {
+app.get('https://echoa.onrender.com/api/v1/echoa', async (req, res) => {
   try {
     const results = await db.query('SELECT * FROM classics');
     res.json(results.rows);
@@ -22,7 +22,7 @@ app.get('/api/classics', async (req, res) => {
 });
 
 // POST new album
-app.post('/api/classics', async (req, res) => {
+app.post('https://echoa.onrender.com/api/v1/echoa', async (req, res) => {
   const { artist, album_title, year, genre } = req.body;
 
   try {
@@ -38,7 +38,7 @@ app.post('/api/classics', async (req, res) => {
 });
 
 // PUT update album
-app.put('/api/classics/:id', async (req, res) => {
+app.put('https://echoa.onrender.com/api/v1/echoa', async (req, res) => {
   const { id } = req.params;
   const { artist, album_title, year, genre } = req.body;
 
