@@ -19,14 +19,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (response.ok) {
-        alert('Album added successfully!');
+        showModal();
         form.reset();
       } else {
-        alert('Failed to submit. Try again.');
+        alert('Failed to submit. Please try again.');
       }
+      
     } catch (error) {
       console.error('Error submitting album:', error);
       alert('Server error.');
     }
   });
 });
+
+function showModal() {
+  const modal = document.getElementById('successModal');
+  const span = document.getElementsByClassName('close')[0];
+
+  modal.style.display = "block";
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+}
+
