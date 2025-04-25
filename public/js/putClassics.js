@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const id = document.getElementById('id').value;
     const artist = document.getElementById('artist').value;
     const album_title = document.getElementById('album_title').value;
     const year = document.getElementById('year').value;
